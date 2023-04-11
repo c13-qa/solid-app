@@ -1,9 +1,11 @@
-const Card = () => {
+
+const Card = ({  rounded, flat, children }) => {
   return (
-    <div class="bg-white rounded-md p-4 text-center">
-      <h2>Card Component</h2>
-      <p>Nulla est sunt quis adipisicing eiusmod minim.</p>
-      <button class="btn">Click me!</button>
+    <div
+      class="bg-white p-4 text-center"
+      classList={{ "rounded-md": rounded, "shadow-md": !flat }}
+    >
+      {children}
     </div>
   );
 };
