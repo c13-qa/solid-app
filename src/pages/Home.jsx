@@ -1,36 +1,32 @@
-import { createResource } from "solid-js"
-import Card from "../components/Card"
+import { For, Show, createResource } from "solid-js";
+import Card from "../components/Card";
 
-const fetchProducts=async()=>{
-  const res= await fetch("http://localhost:4000/Products")
+const fetchProducts = async () => {
+  const res = await fetch("http://localhost:4000/Products");
 
-  return res.json()
-}
+  return res.json();
+};
 
-const Home=()=>{
-  const [products]=createResource(fetchProducts)
+const Home = () => {
+  const [products] = createResource(fetchProducts);
 
-  console.log(products())
-    return(
-        <div class="grid grid-cols-4 my-4 gap-10">
-        <Card rounded={true} flat={true}>
-          <h2>Gorra C13</h2>
-          <p>Nulla est sunt quis adipisicing eiusmod minim.</p>
-          <button class="btn">Click me!</button>
-        </Card>
-        <Card rounded={true} flat={false}>
-          <h2>Camisa C13</h2>
-          <p>Nulla est sunt quis adipisicing eiusmod minim.</p>
-          <button class="btn">Click me!</button>
-        </Card>
-        <Card rounded={false} flat={false}>
-          <h2>Mouse C13</h2>
-          <p>Nulla est sunt quis adipisicing eiusmod minim.</p>
-          <button class="btn">Click me!</button>
-        </Card>
-        <p>{console.log(products(),products.loading)}</p>
+  // console.log(products())
+  return (
+    <Show when={products()} fallback={<p>Loading ...</p>}>
+      <div class="grid grid-cols-4 my-4 gap-10">
+        <For each={products()}>
+          {(product) => (
+            <Card flat={true} rounded={true}>
+              <img src={product.image} alt="product image" />
+              <h2 class="my-3 font-bold">{product.name}</h2>
+              <p class="font-semibold text-justify">{product.description}</p>
+              <span>${product.price}</span>
+            </Card>
+          )}
+        </For>
       </div>
-    )
-}
+    </Show>
+  );
+};
 
-export default Home
+export default Home;
