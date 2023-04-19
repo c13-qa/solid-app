@@ -20,13 +20,6 @@
             "description":"Adipisicing tempor nulla cupidatat consectetur sunt cupidatat pariatur aliquip veniam. Fugiat minim velit eu ad ea. Nulla amet ea occaecat adipisicing. Ullamco laborum aliqua in laborum consequat velit duis laboris do quis ut voluptate amet cupidatat.",
             "price":"1000",
             "image":"https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        },
-        {
-            "id":"4",
-            "name":"Sunglasses C13",
-            "description":"Adipisicing tempor nulla cupidatat consectetur sunt cupidatat pariatur aliquip veniam. Fugiat minim velit eu ad ea. Nulla amet ea occaecat adipisicing. Ullamco laborum aliqua in laborum consequat velit duis laboris do quis ut voluptate amet cupidatat.",
-            "price":"600",
-            "image":"https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg"
         }
     ]
 }

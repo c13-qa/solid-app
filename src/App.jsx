@@ -5,6 +5,7 @@ import Card from "./components/Card";
 import { Routes, Route, A } from "@solidjs/router";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
+import Product from "./pages/Product";
 
 const App = () => {
   const [darkTheme, setDarkTheme] = createSignal(false);
@@ -26,11 +27,13 @@ const App = () => {
         <h1>Código C13</h1>
         <A href="/">Home</A>
         <A href="/cart">Cart</A>
+        {/* <A href="/product">Products</A> */}
       </header>
       <img class="rounded-md" src={banner} alt="site banner" />
       <Routes>
         <Route path="/" component={Home} />
         <Route path="/cart" component={Cart} />
+        <Route path="/product/:id" component={Product} />
       </Routes>
     </div>
   );
