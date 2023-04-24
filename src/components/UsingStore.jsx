@@ -1,5 +1,5 @@
 import { render } from "solid-js/web";
-import { createSignal, For } from "solid-js";
+import { createEffect, createSignal, For } from "solid-js";
 import { createStore } from "solid-js/store";
 
 function UsingStore() {
@@ -24,6 +24,10 @@ function UsingStore() {
     // setProducts(1, "price", 25);
     setProducts((p) => p.id === id, "price", 50);
   };
+
+  createEffect(()=>{
+    console.log(person.name.first)
+  })
 
   return (
     <div>

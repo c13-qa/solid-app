@@ -6,6 +6,7 @@ import { Routes, Route, A } from "@solidjs/router";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Product from "./pages/Product";
+import UsingStore from "./components/UsingStore";
 
 const App = () => {
   const [darkTheme, setDarkTheme] = createSignal(false);
@@ -14,6 +15,7 @@ const App = () => {
   };
   return (
     <div class="container m-auto">
+    {/* <UsingStore/> */}
       <header
         class="my-4 p-2 text-xl flex items-center gap-4"
         classList={{ "bg-neutral-900": darkTheme(), "text-white": darkTheme() }}
