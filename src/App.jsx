@@ -7,12 +7,19 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Product from "./pages/Product";
 import UsingStore from "./components/UsingStore";
+import { useCartContext } from "./context/CartContext";
 
 const App = () => {
   const [darkTheme, setDarkTheme] = createSignal(false);
   const toggleTheme = () => {
     setDarkTheme(!darkTheme());
   };
+  const {items}= useCartContext()
+   const quantity=()=>{
+    return items.reduce((acc,current)=>{
+      return acc + current.quantity
+    },0)
+   }
   return (
     <div class="container m-auto">
     {/* <UsingStore/> */}
@@ -28,7 +35,7 @@ const App = () => {
         </span>
         <h1>Código C13</h1>
         <A href="/">Home</A>
-        <A href="/cart">Cart</A>
+        <A href="/cart">Cart ({quantity()})</A>
         {/* <A href="/product">Products</A> */}
       </header>
       <img class="rounded-md" src={banner} alt="site banner" />
