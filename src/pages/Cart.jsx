@@ -1,9 +1,9 @@
 import { For, useContext } from "solid-js";
 import Card from "../components/Card";
-import { CartContext } from "../context/CartContext";
+import { useCartContext } from "../context/CartContext";
 
 const Cart = () => {
-  const { items } = useContext(CartContext);
+  const { items } = useCartContext();
   return (
     <div class="max-w-md my-8 mx-auto">
       <Card rounded={true}>
@@ -11,7 +11,7 @@ const Cart = () => {
         <For each={items}>
           {(item) => (
             <p>
-              {item.title} price $ {item.price}
+              {item.name} price $ {item.price} quantity: {item.quantity}
             </p>
           )}
         </For>
